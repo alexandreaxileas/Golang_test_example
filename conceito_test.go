@@ -12,7 +12,7 @@ func TestConceitoAluno(t *testing.T) {
 	}{
 		{9.0},
 		{8.8},
-		{4.5},
+		{4.9},
 		{11.5},
 		{1.5},
 		{6.5},
