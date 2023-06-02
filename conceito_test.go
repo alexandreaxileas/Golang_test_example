@@ -16,6 +16,7 @@ func TestConceitoAluno(t *testing.T) {
 		{11.5},
 		{1.5},
 		{6.5},
+		{3.5},
 	}
 	//
 	for _, n := range nota {
@@ -29,4 +30,18 @@ func TestConceitoAluno(t *testing.T) {
 			// Realize that erroRetorno has just one "%"
 		}
 	}
+
+}
+
+func TestConceitoVariosAluno(t *testing.T) {
+	//Criando o slice
+	vAluno1 := make([]Alunos, 0) //
+	//Populando a variável vAluno
+	vAluno1 = append(vAluno1, Alunos{"Alexandre G.", 2.90})
+	vAluno1 = append(vAluno1, Alunos{"Alexandre", 10.00})
+	vAluno1 = append(vAluno1, Alunos{"Felipe", 9.00})
+	vAluno1 = append(vAluno1, Alunos{"Alini", 1.50})
+	vAluno1 = append(vAluno1, Alunos{"Natália", 7.00})
+	//
+	ConceitoVariosAluno(vAluno1)
 }
