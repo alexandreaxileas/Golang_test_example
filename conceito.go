@@ -1,5 +1,13 @@
 package conceito
 
+import "fmt"
+
+//Alunos estrutura util
+type Alunos struct {
+	Nome string
+	Nota float64
+}
+
 // ConceitoAluno retorna o conceito a partir da nota
 func ConceitoAluno(nota float64) string {
 	switch {
@@ -19,4 +27,12 @@ func ConceitoAluno(nota float64) string {
 		return "Inválido"
 	}
 
+}
+
+// ConceitoVariosAluno >recebe um slice com vários alunos e notas e imprime um o Conceito
+func ConceitoVariosAluno(pAluno []Alunos) {
+
+	for _, A := range pAluno {
+		fmt.Printf("Aluno: %v - Nota: %.2f \n", A.Nome, A.Nota)
+	}
 }
