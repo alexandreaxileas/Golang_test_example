@@ -1,8 +1,11 @@
 package conceito
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
-//Alunos estrutura util
+// Alunos estrutura util
 type Alunos struct {
 	Nome string
 	Nota float64
@@ -31,8 +34,10 @@ func ConceitoAluno(nota float64) string {
 
 // ConceitoVariosAluno >recebe um slice com vários alunos e notas e imprime um o Conceito
 func ConceitoVariosAluno(pAluno []Alunos) {
+	// Ordendando o slice antes de imprimir
+	sort.SliceStable(pAluno, func(i, j int) bool { return pAluno[i].Nome < pAluno[j].Nome })
 
 	for _, A := range pAluno {
-		fmt.Printf("Aluno: %v - Nota: %.2f \n", A.Nome, A.Nota)
+		fmt.Printf("Aluno: %v - Nota: %v \n", A.Nome, ConceitoAluno(A.Nota))
 	}
 }
